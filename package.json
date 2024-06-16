@@ -4,6 +4,7 @@
     "description": "Fruit Rest api utilizing embedded NOSQL database (lowdb)",
     "main": "server.js",
     "scripts": {
+        "start": "node server.js",
         "dev": "nodemon src/server.js --ignore src/database/db.json",
         "test": "jest"
     },
