@@ -6,7 +6,7 @@
  * The Fruit class represents the fruit context 
 */
 
-class Fruit {
+export default class Fruit {
 
     private id : string;
     private name : string;

@@ -6,7 +6,7 @@
  * The User class represents the user context 
 */
 
-class User {
+export default class User {
 
     private id : string;
     private username : string;

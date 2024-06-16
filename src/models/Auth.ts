@@ -5,6 +5,7 @@
  * 
  * The Auth class represents the authentication for each User
 */
+import Client from "./Client";
 
 class Auth{
 

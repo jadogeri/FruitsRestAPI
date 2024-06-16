@@ -1,9 +1,18 @@
 {
-  "auth":[
-
+  "auth": [
+    {
+      "username": "z",
+      "token": "",
+      "expiresIn": ""
+    }
   ],
-  "users":[
-
+  "users": [
+    {
+      "id": "4",
+      "username": "z",
+      "password": "$2b$05$4eixczTDqsNelTme405q3uw.TTeelYSOSztjVjv5NDEji7rzQmvXK",
+      "nickname": "z"
+    }
   ],
   "fruits": [
     {
@@ -383,6 +392,4 @@
       "name": "wax apples"
     }
   ]
-
 }
-

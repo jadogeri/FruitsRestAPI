@@ -5,6 +5,8 @@
  * 
  * The Admin class represents the admin context 
 */
+import User from "./User";
+import Client from "./Client";
 
 class Admin extends User{
 

@@ -6,7 +6,10 @@
  * The Client class represents the client context 
 */
 
-class Client extends User{
+import User from "./User";
+import Fruit from "./Fruit";
+
+export default class Client extends User{
 
     private fruits : Fruit[];
   
@@ -53,3 +56,4 @@ class Client extends User{
     
 
 }
+
