@@ -83,7 +83,7 @@ const loginUser = asyncHandler(async (req, res) => {
                 id: registeredUser.id,
             },
 
-        } , "joseph123456789",{expiresIn : "2m"} );
+        } , "joseph123456789",{expiresIn : "50m"} );
         database.get("auth").find({username :username}).assign({token : accessToken}).write();
         res.status(200).json({accessToken})
     }else{

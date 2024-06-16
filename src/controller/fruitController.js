@@ -7,45 +7,66 @@ const bcrypt = require('bcrypt');
  * @route GET /api/Fruit/
  * @access public
  */
+/**
+ * let token;
+        let authHeader = req.headers.authorization || req.headers.Authorization;
 
+       if(authHeader && authHeader.startsWith('Bearer')){
+            token = authHeader.split(' ')[1];
+            jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) =>{
+
+                if(err){
+                    res.status(401);
+                    throw new Error("User is not authorized")
+                }
+                console.log(decoded);
+                req.user = decoded.user;
+                next();
+            }); 
+            if(!token){
+                res.status(401);
+                throw new Error("User is not authorize or token is missing in request");
+            }
+        }
+ */
 const getAllFruits = asyncHandler(async (req, res) => {
 
-    try{
-        const {token} = req.body
-        if(!password && (!username || nickname)){
-            res.status(404);
-            throw new Error('All fields are mandatory')
-        }
+    try{    
+        let authHeader = req.headers.authorization || req.headers.Authorization;
+        console.log("autheader === ",authHeader)
+
     
+        let token = res.locals.token;
+        console.log("res token from header === ",token)
         let  {getConnection} = require("../../server");
         let database = getConnection();
-        //const allUsers = database.get("users").value()
+        const fruits = database.get("fruits").value()
+        res.json(fruits)
+
     
         // const registeredUser = allUsers.filter((user)=>{
         //     return user.username === username
         // })
     
-        const registeredUser = database.get("users").find({username : username}).value();
     
-       
-        let accessToken = "";
-        if(registeredUser && (await bcrypt.compare(password, registeredUser.password))){
-            accessToken = jwt.sign({
-                user:{
-                    username : registeredUser.username,
-                    id: registeredUser.id,
-                },
+       //console.log("token === ",token)
+        // let accessToken = "";
+        // if(registeredUser && (await bcrypt.compare(password, registeredUser.password))){
+        //     accessToken = jwt.sign({
+        //         user:{
+        //             username : registeredUser.username,
+        //             id: registeredUser.id,
+        //         },
     
-            } , "joseph123456789",{expiresIn : "2m"} );
-            database.get("auth").find({username :username}).assign({token : accessToken}).write();
-            res.status(200).json({accessToken})
-        }else{
-            res.status(401);
-            throw new Error('password or username not valid');
-        }
+        //     } , "joseph123456789",{expiresIn : "2m"} );
+        //     database.get("auth").find({username :username}).assign({token : accessToken}).write();
+        //     res.status(200).json({accessToken})
+        // }else{
+        //     res.status(401);
+        //     throw new Error('password or username not valid');
+        // }
     
     }catch(e){console.log(e)}
-        res.json({ message: 'login the client'})
     
     // const {username,password,email} = req.body;
 
