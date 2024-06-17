@@ -2,7 +2,7 @@
   "auth": [
     {
       "username": "z",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTg2MjM1NjYsImV4cCI6MTcxODYyNjU2Nn0.eFjaxf-LKTf3d_HhF8n0V0lxWt8A38L7OQW0xTCPuS0",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTg2Mzg5NDUsImV4cCI6MTcxODY0MTk0NX0.NhDVZEL6tJ86za8vQecoms8a40cdqn6VIiVrKbDQN6o",
       "expiresIn": ""
     }
   ],
@@ -14,8 +14,22 @@
       "nickname": "z",
       "fruits": [
         {
-          "id": 3,
-          "name": "asian pear"
+          "id": 1,
+          "name": "apple"
+        },
+        {
+          "id": 2,
+          "name": "apricot"
+        },
+        [
+          {
+            "id": 3,
+            "name": "asian pear"
+          }
+        ],
+        {
+          "id": 4,
+          "name": "avocado"
         }
       ]
     }
