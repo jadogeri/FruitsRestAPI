@@ -37,6 +37,8 @@ const PORT = 4500;
 app.use('/api/user', require('./src/routes/userRoutes'));
 app.use('/api/fruit', require('./src/routes/fruitRoutes'));
 app.use('/api/client', require('./src/routes/clientRoutes'));
+app.use('', require('./src/routes/homeRoutes'));
+
 
 app.use(errorHandler)
 
