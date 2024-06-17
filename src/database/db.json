@@ -2,7 +2,7 @@
   "auth": [
     {
       "username": "z",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTg1NjY4OTIsImV4cCI6MTcxODU2OTg5Mn0.eV7ukpO6ohulFg4R3pwDIZYFAV9L06dmC9Po8eoe29A",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTg2MjM1NjYsImV4cCI6MTcxODYyNjU2Nn0.eFjaxf-LKTf3d_HhF8n0V0lxWt8A38L7OQW0xTCPuS0",
       "expiresIn": ""
     }
   ],
@@ -10,8 +10,14 @@
     {
       "id": "4",
       "username": "z",
-      "password": "$2b$05$4eixczTDqsNelTme405q3uw.TTeelYSOSztjVjv5NDEji7rzQmvXK",
-      "nickname": "z"
+      "password": "$2b$05$hjKqsmT4NO0ONAVwpKYuteKaDQEXvNxKW6TGosJiQlWqzGsx6UdOm",
+      "nickname": "z",
+      "fruits": [
+        {
+          "id": 3,
+          "name": "asian pear"
+        }
+      ]
     }
   ],
   "fruits": [

@@ -1,22 +1,25 @@
 const express = require('express')
+const {validateTokenHeader} = require("../middleware/validateTokenHeaderHandler")
+
 
 const router = express.Router();
 
-const {addFruitToClient,getFruitFromClient,getFruitsFromClient, 
-    removeFruitFromClient,removeFruitsFromClient,replaceFruitFromClient} = require("../controller/clientController");
 
-router.get("/getfruits",getFruitsFromClient);
 
-router.get("/getfruit/:id",getFruitFromClient);
+const {addFruitToClient,getFruitFromClient,getFruitsFromClient, removeFruitFromClient,
+    removeFruitsFromClient,replaceFruitFromClient} = require("../controller/clientController");
 
-router.post("/addfruit",addFruitToClient);
+router.get("/getfruits/",validateTokenHeader,getFruitsFromClient);
 
-router.put("/replacefruit/:id",replaceFruitFromClient);
+router.get("/getfruit/:id",validateTokenHeader,getFruitFromClient);
 
-router.delete("/removefruit/:id",removeFruitFromClient);
+router.post("/addfruit/",validateTokenHeader,addFruitToClient);
 
-router.delete("/removefruits/",removeFruitsFromClient);
+router.put("/replacefruit/",validateTokenHeader,replaceFruitFromClient);
 
+router.delete("/removefruit/:id",validateTokenHeader,removeFruitFromClient);
+
+router.delete("/removefruits/",validateTokenHeader,removeFruitsFromClient);
 
 
 

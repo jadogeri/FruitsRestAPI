@@ -1,5 +1,5 @@
 const express = require('express')
-const {verifyToken} = require("../middleware/verifyToken")
+const {validateTokenBody} = require("../middleware/validateTokenBodyHandler")
 
 const router = express.Router();
 
@@ -9,9 +9,9 @@ router.post("/register",registerUser);
 
 router.post("/login",loginUser);
 
-router.post("/logout",verifyToken,logoutUser);
+router.post("/logout",validateTokenBody,logoutUser);
 
-router.post("/reset",resetUser);
+router.post("/reset",validateTokenBody,resetUser);
 
 
 
