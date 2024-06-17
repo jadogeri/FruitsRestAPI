@@ -5,8 +5,8 @@
       "handle": "filesystem"
     },
     {
-      "src": "^(?:/(.*))$",
-      "dest": "/",
+      "src": "^api(?:/(.*))$",
+      "dest": "/api",
       "check": true
     },
     {
