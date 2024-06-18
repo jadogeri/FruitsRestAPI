@@ -39,7 +39,13 @@ app.use('/api/fruit', require('./src/routes/fruitRoutes'));
 app.use('/api/client', require('./src/routes/clientRoutes'));
 app.use('/', require('./src/routes/homeRoutes'));
 
+app.get("/hello",(req,res) =>{
+  res.json({"message " : "route hello"});
+})
 
+app.get("/about",(req,res) =>{
+  res.json({"message " : "route hello"});
+})
 app.use(errorHandler)
 
 app.listen(PORT, ()=> {
