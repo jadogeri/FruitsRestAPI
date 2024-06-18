@@ -46,6 +46,9 @@ app.get("/hello",(req,res) =>{
 app.get("/about",(req,res) =>{
   res.json({"message " : "route hello"});
 })
+app.get('*', function(req, res){
+  res.send('what???', 404);
+});
 app.use(errorHandler)
 
 app.listen(PORT, ()=> {
