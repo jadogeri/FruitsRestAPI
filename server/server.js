@@ -36,20 +36,13 @@ const app = express()
 app.use(cors(corsOptions)) // Use this after the variable declaration
 app.use(bodyParser.json())
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT | 4500;
 
 app.use('/api/user', require('./src/routes/userRoutes'));
 app.use('/api/fruit', require('./src/routes/fruitRoutes'));
 app.use('/api/client', require('./src/routes/clientRoutes'));
-app.use('/', require('./src/routes/homeRoutes'));
 
-app.get("/hello",(req,res) =>{
-  res.json({"message " : "route hello"});
-})
 
-app.get("/about",(req,res) =>{
-  res.json({"message " : "route hello"});
-})
 app.get('*', function(req, res){
   res.send('what???', 404);
 });
