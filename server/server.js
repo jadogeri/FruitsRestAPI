@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require("express")
 const cors = require("cors")
 // const lowDb = require("lowdb")
@@ -5,6 +7,8 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const errorHandler = require('./src/middleware/errorHandler');
 const { createConnection } = require("./src/database/configs/lowdb")
+
+
 
 const corsOptions = {
     origin:'*', 
@@ -32,7 +36,7 @@ const app = express()
 app.use(cors(corsOptions)) // Use this after the variable declaration
 app.use(bodyParser.json())
 
-const PORT = 4500;
+const PORT = process.env.PORT;
 
 app.use('/api/user', require('./src/routes/userRoutes'));
 app.use('/api/fruit', require('./src/routes/fruitRoutes'));
