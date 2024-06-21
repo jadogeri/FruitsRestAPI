@@ -7,6 +7,8 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const errorHandler = require('./src/middleware/errorHandler');
 const { createConnection } = require("./src/database/configs/lowdb")
+const swaggerjsdoc = require("swagger-jsdoc")
+const swaggerui = require("swagger-ui-express")
 
 
 
@@ -43,10 +45,28 @@ app.use('/api/fruit', require('./src/routes/fruitRoutes'));
 app.use('/api/client', require('./src/routes/clientRoutes'));
 
 
-app.get('*', function(req, res){
-  res.send('what???', 404);
-});
+
 app.use(errorHandler)
+
+const swaggeroptions = {
+  definition:{
+    openapi : "3.0.0",
+    info: {
+      title: "Fruits Rest API",
+      version: "0.1"
+
+    },
+    servers : [
+      {
+      url : "http://localhost:4500"
+      }
+    ]
+  },
+  apis : ["./src/routes/*.js"],
+};
+
+const spacs = swaggerjsdoc(swaggeroptions);
+app.use("/api-docs", swaggerui.serve,swaggerui.setup(spacs))
 
 app.listen(PORT, ()=> {
   console.log(`Backend is running on http://localhost:${PORT}`)
