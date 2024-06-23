@@ -1,32 +1,82 @@
+
+/**
+ *  *     parameters:
+ *       - in: body
+ *       - name: username
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The user username
+ *       - name: password
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The user password
+ *       - name: confirm_password
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The user confirmation password
+ *       - name: nickname
+ *         schema:
+ *           type: string
+ *         required: false
+ *         description: The user alias
+ */
+
+
+
+
+
 /**
  * @swagger
  * components:
  *   schemas:
  *     Users:
  *       type: object
- *       required:
- *         - title
- *         - description
- *         - finished
  *       properties:
  *         id:
  *           type: string
+ *           example: adcfgrttf2343
  *           description: The auto-generated id of the user
- *         title:
+ *         username:
  *           type: string
- *           description: The title of your user
- *         description:
+ *           example: JohnnyDoe
+ *           description: The unique username of the user
+ *         password:
+ *           type: string 
+ *           example: password
+ *           description: The password of the user
+ *         confirm_password:
+ *           type: string 
+ *           example: confirm_password
+ *           description: The confirmation password of the user
+ *         nickname:
  *           type: string
- *           description: The user explanation
- *         published:
+ *           example: Johnny D
+ *           description: The alias of your user
+ *         token:
+ *           type: string
+ *           description: The user auth token generated after login
+ *         is_active:
  *           type: boolean
- *           description: Whether you have finished reading the user
- *         createdAt:
+ *           description: Whether your account is active or locked state 
+ *         created_at:
  *           type: string
  *           format: date
  *           description: The date the user was added
  *     
  */
+
+
+
+
+
+
+
+
+
+
 /**
  * @swagger
  * tags:
@@ -34,23 +84,24 @@
  *   description: The Users managing API
  * 
  * 
- * /user/register:
+ * /api/user/register:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
- *     parameters:
- *       - in: body
- *         name: id
- *         schema:
- *           type: string
- *         required: true
- *         description: The user id
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Users'
+ *             type: object
+ *             required: [username, password, confirm_password]
+ *             properties:
+ *               username:
+ *                  type: string
+ *               password:
+ *                  type: string
+ *               confirm_password: 
+ *                  type: string 
  *     responses:
  *       200:
  *         description: The created user.
@@ -60,10 +111,22 @@
  *               $ref: '#/components/schemas/Users'
  *       500:
  *         description: Some server error
- * /user/login:
+ * /api/user/login:
  *   post:
  *     summary: Login the user
  *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [username, password]
+ *             properties:
+ *               username:
+ *                  type: string
+ *               password:
+ *                  type: string
  *     responses:
  *       200:
  *         description: The list of the User Credentials

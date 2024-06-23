@@ -11,7 +11,6 @@ const swaggerjsdoc = require("swagger-jsdoc")
 const swaggerui = require("swagger-ui-express")
 
 
-
 const corsOptions = {
     origin:'*', 
     credentials:true,            //access-control-allow-credentials:true

@@ -4,6 +4,16 @@
       "username": "z",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTg4Mzk2MzUsImV4cCI6MTcxODg0MjYzNX0.TNTGAjoU_we1b3fBIwW9OinY2cz56Q3o5RsYiiYsaMI",
       "expiresIn": ""
+    },
+    {
+      "username": "x",
+      "token": "",
+      "expiresIn": ""
+    },
+    {
+      "username": "d",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZCIsImlkIjoiNCJ9LCJpYXQiOjE3MTkxODU4MjAsImV4cCI6MTcxOTE4ODgyMH0.kzhfNeHNXUDnOgTthPGRtrjXBIlEzdLLjS6DZuH6eDY",
+      "expiresIn": ""
     }
   ],
   "users": [
@@ -32,6 +42,18 @@
           "name": "avocado"
         }
       ]
+    },
+    {
+      "id": "4",
+      "username": "x",
+      "password": "$2b$05$.nL/7PM3gAD48UTb27UDYupyWDITiuRDhZ5sHRlayYmPk78Lru8z6",
+      "fruits": []
+    },
+    {
+      "id": "4",
+      "username": "d",
+      "password": "$2b$05$L4n9OAlUhBnQOcyh5mD6BOQFWlVYTJdlNRZ/MmJE.Ll5QH.Ohgt6m",
+      "fruits": []
     }
   ],
   "fruits": [

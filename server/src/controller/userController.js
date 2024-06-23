@@ -85,7 +85,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
         } , "joseph123456789",{expiresIn : "50m"} );
         database.get("auth").find({username :username}).assign({token : accessToken}).write();
-        res.status(200).json({accessToken})
+        res.status(200).json({token : accessToken})
     }else{
         res.status(401);
         throw new Error('password or username not valid');
