@@ -45,7 +45,7 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Clients'
- * /client/addClient:
+ * /api/client/addClient:
  *   post:
  *     summary: Create a new client
  *     tags: [Clients]
