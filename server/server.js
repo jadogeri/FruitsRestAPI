@@ -61,7 +61,7 @@ const swaggeroptions = {
       }
     ]
   },
-  apis : ["./src/routes/*.js"],
+  apis : ["./src/docs/*.js"],
 };
 
 const spacs = swaggerjsdoc(swaggeroptions);
