@@ -2,7 +2,7 @@
   "auth": [
     {
       "username": "z",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTkyMDEzMjMsImV4cCI6MTcxOTIwNDMyM30.cOFD81SyWozXSWSQxX7rxpVyN2yIx4T4Z7cpHgGwH7o",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTkyNTI2NTksImV4cCI6MTcxOTI1NTY1OX0.dT_rlpIU3fm0vrP4CYArvgBUzNVIH9_wsv6Y8St2Lps",
       "expiresIn": ""
     },
     {
@@ -40,6 +40,10 @@
         {
           "id": 4,
           "name": "avocado"
+        },
+        {
+          "id": 40,
+          "name": "huckleberry"
         }
       ]
     },
