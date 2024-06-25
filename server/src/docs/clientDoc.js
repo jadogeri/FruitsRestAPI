@@ -1,21 +1,3 @@
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTkyNDg5ODcsImV4cCI6MTcxOTI1MTk4N30.FKogDmhGl2eh-IsSuvOcr2K3kzC4JdJpAyjvqe4dV54
-
-
-
-/**
- * 
- * 
-
-
-
-
-router.delete("/removefruit/:id",validateTokenHeader,removeFruitFromClient);
-
-router.delete("/removefruits/",validateTokenHeader,removeFruitsFromClient);
-
-
- */
-
 /**
  * @swagger
  * components:
