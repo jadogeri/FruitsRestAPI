@@ -2,7 +2,7 @@
   "auth": [
     {
       "username": "z",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTkyNTI2NTksImV4cCI6MTcxOTI1NTY1OX0.dT_rlpIU3fm0vrP4CYArvgBUzNVIH9_wsv6Y8St2Lps",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ9LCJpYXQiOjE3MTkzMjY4OTMsImV4cCI6MTcxOTMyOTg5M30.abR4-r---G3JsFvKiscqBNJiPsRXdppBTZWJV4CvTkE",
       "expiresIn": ""
     },
     {
@@ -24,26 +24,12 @@
       "nickname": "z",
       "fruits": [
         {
-          "id": 1,
-          "name": "apple"
+          "id": 3,
+          "name": "asian pear"
         },
         {
-          "id": 2,
-          "name": "apricot"
-        },
-        [
-          {
-            "id": 3,
-            "name": "asian pear"
-          }
-        ],
-        {
-          "id": 4,
-          "name": "avocado"
-        },
-        {
-          "id": 40,
-          "name": "huckleberry"
+          "id": 11,
+          "name": "blueberry"
         }
       ]
     },

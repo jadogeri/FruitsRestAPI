@@ -5,13 +5,9 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoieiIsImlkIjoiNCJ
 /**
  * 
  * 
- * router.get("/getfruits/",validateTokenHeader,getFruitsFromClient);
 
-router.get("/getfruit/:id",validateTokenHeader,getFruitFromClient);
 
-router.post("/addfruit/",validateTokenHeader,addFruitToClient);
 
-router.put("/replacefruit/",validateTokenHeader,replaceFruitFromClient);
 
 router.delete("/removefruit/:id",validateTokenHeader,removeFruitFromClient);
 
@@ -129,22 +125,24 @@ router.delete("/removefruits/",validateTokenHeader,removeFruitsFromClient);
  *       - fruitsrestAuth:
  *           - write:clients
  *           - read:clientss  
+ * /api/client/replacefruit:
  *   put:
- *    summary: Update the client by the id
+ *    summary: Replace the fruit of the client by id 
  *    tags: [Clients]
- *    parameters:
- *      - in: path
- *        name: id
- *        schema:
- *          type: string
- *        required: true
- *        description: The client id
  *    requestBody:
  *      required: true
  *      content:
- *        application/json:
+ *        application/json:       
  *          schema:
- *            $ref: '#/components/schemas/Clients'
+ *             type: object
+ *             required: [new_id, old_id] 
+ *             properties:
+ *               new_id:
+ *                  type: integer
+ *                  example: 1
+ *               old_id:
+ *                  type: interger
+ *                  example: 2
  *    responses:
  *      200:
  *        description: The client was updated
@@ -156,20 +154,43 @@ router.delete("/removefruits/",validateTokenHeader,removeFruitsFromClient);
  *        description: The client was not found
  *      500:
  *        description: Some error happened
+ *    security:
+ *       - fruitsrestAuth:
+ *           - write:clients
+ *           - read:clientss 
+ * /api/client/removefruit/{id}:
  *   delete:
- *     summary: Remove the client by id
+ *     summary: Remove fruit of the client by id
  *     tags: [Clients]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: string
+ *           example: 1 
  *         required: true
- *         description: The client id
+ *         description: The id of the fruit
  *
  *     responses:
  *       200:
  *         description: The client was deleted
  *       404:
  *         description: The client was not found
+ *     security:
+ *       - fruitsrestAuth:
+ *           - write:clients
+ *           - read:clientss 
+ * /api/client/removefruits:
+ *   delete:
+ *     summary: Remove all fruits of the client 
+ *     tags: [Clients]
+ *     responses:
+ *       200:
+ *         description: The client was deleted
+ *       404:
+ *         description: The client was not found
+ *     security:
+ *       - fruitsrestAuth:
+ *           - write:clients
+ *           - read:clientss 
  */
