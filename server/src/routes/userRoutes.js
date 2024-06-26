@@ -3,7 +3,7 @@ const {validateTokenBody} = require("../middleware/validateTokenBodyHandler")
 
 const router = express.Router();
 
-const {registerUser, loginUser, logoutUser, resetUser} = require("../controller/userController");
+const {registerUser, loginUser, logoutUser, resetUser} = require("../controllers/userController");
 
 router.post("/register",registerUser);
 

@@ -3,7 +3,7 @@ const {validateTokenHeader} = require("../middleware/validateTokenHeaderHandler"
 
 const router = express.Router();
 
-const {getFruit, getAllFruits} = require("../controller/fruitController");
+const {getFruit, getAllFruits} = require("../controllers/fruitController");
 
 router.get("/getfruits/",validateTokenHeader,getAllFruits);
 

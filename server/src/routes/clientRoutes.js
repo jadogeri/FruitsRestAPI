@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 const {addFruitToClient,getFruitFromClient,getFruitsFromClient, removeFruitFromClient,
-    removeFruitsFromClient,replaceFruitFromClient} = require("../controller/clientController");
+    removeFruitsFromClient,replaceFruitFromClient} = require("../controllers/clientController");
 
 router.get("/getfruits/",validateTokenHeader,getFruitsFromClient);
 
