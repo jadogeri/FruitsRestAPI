@@ -1,8 +1,8 @@
 
-# Currency Converter using Java
+# FRUITS API
 
 ## Description
-This mobile app takes in user inputs ,converts EU currency to US dollars
+This is a REST API ,which stores user seesion and mobile app takes in user inputs ,converts EU currency to US dollars
 
 
 ## Authors
