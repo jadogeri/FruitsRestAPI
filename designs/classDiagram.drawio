@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="on0U2GKteVZS3FVJjsFp" name="Page-1">
-        <mxGraphModel dx="494" dy="471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2132" dy="1211" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#1d1b1b" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -43,7 +43,7 @@
                 <mxCell id="38" value="+ unsubscribe(in token: string): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="31" vertex="1">
                     <mxGeometry y="60" width="220" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="63" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.287;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="31" edge="1" target="4">
+                <mxCell id="63" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.287;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="31" target="4" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="280" as="sourcePoint"/>
                         <mxPoint x="337.20000000000005" y="261.59000000000003" as="targetPoint"/>
@@ -85,7 +85,7 @@
                 <mxCell id="76" value="+ activate(client: Client): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="71" vertex="1">
                     <mxGeometry y="86" width="220" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="75" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1" target="2">
+                <mxCell id="75" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" target="2" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="510" y="354" as="sourcePoint"/>
                         <mxPoint x="430" y="260" as="targetPoint"/>
