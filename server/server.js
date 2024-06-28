@@ -67,10 +67,13 @@ const swaggeroptions = {
 const spacs = swaggerjsdoc(swaggeroptions);
 app.use("/api-docs", swaggerui.serve,swaggerui.setup(spacs))
 
+
+if (process.env.NODE_ENV !== 'test') {
 app.listen(PORT, ()=> {
   console.log(`Backend is running on http://localhost:${PORT}`)
 })
 
+}
 module.exports = { app, getConnection }
 
 
