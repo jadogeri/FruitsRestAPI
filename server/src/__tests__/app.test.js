@@ -2,6 +2,7 @@ const app = require('../../server');
 const request = require('supertest');
 const fs = require("fs");
 
+
 const {getMockData} = require("../utils/getMockData");
 const {setMockData} = require("../utils/setMockData");
 
@@ -40,8 +41,7 @@ describe('register', () => {
 //     const mockUser = (getMockData())
 
 // console.log("mock user ===",mockUser)
-    const res = await request("https://fruitsrestapi.onrender.com"
-      //"http://localhost:4500"
+    const res = await request("http://localhost:4500"
 
     )
       .post('/api/user/login')
