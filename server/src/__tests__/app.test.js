@@ -19,7 +19,10 @@ describe('register', () => {
 //     expect(res.body).toEqual('you need to pass a firstName');
 //   });
   it('logs user into app', async () => {
-    const res = await request("http://localhost:4500")
+    const res = await request("https://fruitsrestapi.onrender.com"
+      //"http://localhost:4500"
+
+    )
       .post('/api/user/login')
       .send({ username : "x", password : "x"});
     data = ((res._body))
