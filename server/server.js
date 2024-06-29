@@ -57,7 +57,8 @@ const swaggeroptions = {
     },
     servers : [
       {
-      url : "http://localhost:4500"
+        url : "https://fruitsrestapi.onrender.com"
+      //url : "http://localhost:4500"
       }
     ]
   },
