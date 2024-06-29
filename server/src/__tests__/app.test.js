@@ -41,7 +41,7 @@ describe('register', () => {
 //     const mockUser = (getMockData())
 
 // console.log("mock user ===",mockUser)
-    const res = await request("http://localhost:4500"
+    const res = await request("https://fruitsrestapi.onrender.com"
 
     )
       .post('/api/user/login')
