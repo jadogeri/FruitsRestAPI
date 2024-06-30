@@ -1,4 +1,3 @@
-const fs = require("fs");
 const getMockData = () => {
     
     let jsonString = localStorage.getItem("mock")

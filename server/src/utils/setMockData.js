@@ -6,9 +6,9 @@ const setMockData = () => {
         console.log("File read failed:", err);
         return "";
     }
-    console.log("File data:", jsonString, typeof jsonString);
+    //console.log("File data:", jsonString, typeof jsonString);
     localStorage.setItem("mock",jsonString);
-    console.log("mock data set\n",jsonString )
+   // console.log("mock data set\n",jsonString )
     });
 
 }

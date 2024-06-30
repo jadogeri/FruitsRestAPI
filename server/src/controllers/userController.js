@@ -1,5 +1,4 @@
 const asyncHandler = require('express-async-handler');
-//const User = require('../models/User.ts');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
@@ -104,7 +103,6 @@ const loginUser = asyncHandler(async (req, res) => {
 
 
 const logoutUser = asyncHandler(async (req, res) => {
-try{
 
     const {tokenExpired} = require("../utils/tokenExpired")
     const {username, token} = req.body
@@ -139,24 +137,7 @@ try{
     const result = database.get("auth").find({username :username}).assign({token : ""}).write();
     res.json(result)
 
-    // const user = await User.findOne({ email });
-    // if(user && (await bcrypt.compare(password, user.password))){
-    //     const accessToken = jwt.sign({
-    //         user:{
-    //             username : user.username,
-    //             email : user.email,
-    //             id: user.id,
-    //         },
-
-    //     } , process.env.ACCESS_TOKEN_SECRET,{expiresIn : "15m"} );
-    //     res.status(200).json({accessToken})
-    // }else{
-    //     res.status(401);
-    //     throw new Error('password or email not valid');
-    // }
-}catch(e){console.log(e)}
-
-});
+ });
 
 /**
  * @description Logout a User
@@ -191,5 +172,52 @@ const resetUser = asyncHandler(async (req, res) => {
 
 });
 
+/**
+ * @description Removes a User
+ * @route DELETE /api/user/deactivate
+ * @access private
+ */
 
-module.exports = {registerUser, loginUser, logoutUser, resetUser}
+
+const deactivateUser = asyncHandler(async (req, res) => {     
+       
+    const {username,password,confirm_delete} =  req.body;
+console.log("username ===",username,"password ===",password,"confirm delete ===",confirm_delete)
+    if(!username||!password){
+        res.status(400) //.json({message:"all fields must be filled"})
+        throw new Error('username and password fields are mandatory')        
+    }
+    if(!confirm_delete && confirm_delete !== true){
+        res.status(400) //.json({message:"all fields must be filled"})
+        throw new Error('confirm_delete field is mandatory and must be true');
+    }
+
+    let  {getConnection} = require("../../server");
+    let database = getConnection();
+    
+    const registeredUser =  database.get("users").find({username : username}).value();
+    console.log("user found === ",JSON.stringify(registeredUser,null,2))
+    if(!registeredUser){
+        res.status(400) //.json({message:"all fields must be filled"})
+        throw new Error(`username ${username} does not exist`)}
+    
+    // check if the password matches the hash password
+    console.log("registereduser === ", JSON.stringify(registeredUser.password))
+    if(!(await bcrypt.compare(password, registeredUser.password))){
+        res.status(400)
+        throw new Error(`${username} password is incorrect`);
+     }    
+
+     let result =  database.get('users').remove( {username : registeredUser.username}).write();
+     console.log(JSON.stringify(result))
+     //remove user from auth table
+    result =  database.get('auth').remove( {username : registeredUser.username}).write();
+    console.log(JSON.stringify(result))
+
+
+     res.json(`Successfully deleted user ${registeredUser.username}`);
+      
+});
+
+
+module.exports = {registerUser, loginUser, logoutUser, resetUser, deactivateUser}

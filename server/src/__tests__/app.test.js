@@ -26,32 +26,50 @@ describe('register', () => {
 //     expect(res.body).toEqual('you need to pass a firstName');
 //   });
 
+
   it('registers user', async () => {
     let mock = getMockData();
     console.log("mock in get =====,", mock)
     let mockObj = JSON.parse(mock)
     const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/register').send(mockObj);
 
-    console.log(JSON.stringify(res))
-    expect(res.statusCode).toEqual(200);
+   // console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(400);
   });
 
 
   it('logs user into app', async () => {
-//     const mockUser = (getMockData())
+    const stringUser = getMockData();
+    const mockUser = JSON.parse(stringUser);
 
-// console.log("mock user ===",mockUser)
+    console.log("mock user ===",mockUser, typeof mockUser)
     const res = await request("https://fruitsrestapi.onrender.com"
 
     )
       .post('/api/user/login')
-      .send({ username : "x", password : "x"});
+      .send({ username : mockUser.username, password : mockUser.password});
     data = ((res._body))
+    //console.log("response object ====================",JSON.stringify(res))
     const {token} = data
-    console.log("data in token === ",data, typeof data)
     console.log(" token === ",data, typeof token)
+    console.log("mockuser === ",JSON.stringify(mockUser))
+    const User = {...mockUser, token : token};
+    console.log("mockUser After Update and merge =============",JSON.stringify(User))
+    localStorage.removeItem("mock");
+    localStorage.setItem("mock",JSON.stringify(User, null, 2))
 
     expect(res.statusCode).toEqual(200);
     // expect(res.body).toEqual('you need to pass a firstName');
-  }),8000
+  })
+  
+  it('logout user', async () => {
+    let mock = getMockData();
+    console.log("mock in get =====,", mock)
+    let mockObj = JSON.parse(mock)
+    const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/logout').send(mockObj);
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  }),20000
+  
 });

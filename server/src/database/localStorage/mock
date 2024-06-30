@@ -1,8 +1,7 @@
-
 {
-    "username" : "John@Doe",
-    "nickname" :  "John Doe",
-    "password" : "Test12345",
-    "confirm_password" : "Test12345",
-    "token" : ""
+  "username": "John@Doe",
+  "nickname": "John Doe",
+  "password": "Test12345",
+  "confirm_password": "Test12345",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiSm9obkBEb2UiLCJpZCI6IjQifSwiaWF0IjoxNzE5NzA3ODI4LCJleHAiOjE3MTk3MTA4Mjh9.Wu1YqtLXhQiCMb21UF2UgxiKsNksaXWTMCZcD3V09iI"
 }
