@@ -140,39 +140,6 @@ const logoutUser = asyncHandler(async (req, res) => {
  });
 
 /**
- * @description Logout a User
- * @route PUT /api/user/logout
- * @access public
- */
-
-
-const resetUser = asyncHandler(async (req, res) => {
-
-    // const {email, password,username} = req.body
-    // if(!password && (!username || !email)){
-    //     res.status(404);
-    //     throw new Error('All fields are mandatory')
-    // }
-    // const user = await User.findOne({ email });
-    // if(user && (await bcrypt.compare(password, user.password))){
-    //     const accessToken = jwt.sign({
-    //         user:{
-    //             username : user.username,
-    //             email : user.email,
-    //             id: user.id,
-    //         },
-
-    //     } , process.env.ACCESS_TOKEN_SECRET,{expiresIn : "15m"} );
-    //     res.status(200).json({accessToken})
-    // }else{
-    //     res.status(401);
-    //     throw new Error('password or email not valid');
-    // }
-    res.json({ message: 'reset the client'})
-
-});
-
-/**
  * @description Removes a User
  * @route DELETE /api/user/deactivate
  * @access private
@@ -220,4 +187,4 @@ console.log("username ===",username,"password ===",password,"confirm delete ==="
 });
 
 
-module.exports = {registerUser, loginUser, logoutUser, resetUser, deactivateUser}
+module.exports = {registerUser, loginUser, logoutUser, deactivateUser}
