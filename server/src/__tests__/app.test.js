@@ -69,7 +69,7 @@ describe('register', () => {
   
     //console.log(JSON.stringify(res))
     expect(res.statusCode).toEqual(200);
-  },10000)
+  })
   
   
 });
