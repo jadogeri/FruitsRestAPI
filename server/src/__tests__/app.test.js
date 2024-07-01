@@ -42,7 +42,6 @@ describe('register', () => {
     const stringUser = getMockData();
     const mockUser = JSON.parse(stringUser);
 
-    console.log("mock user ===",mockUser, typeof mockUser)
     const res = await request("https://fruitsrestapi.onrender.com"
 
     )
@@ -51,10 +50,10 @@ describe('register', () => {
     data = ((res._body))
     //console.log("response object ====================",JSON.stringify(res))
     const {token} = data
-    console.log(" token === ",data, typeof token)
-    console.log("mockuser === ",JSON.stringify(mockUser))
+    //console.log(" token === ",data, typeof token)
+    //console.log("mockuser === ",JSON.stringify(mockUser))
     const User = {...mockUser, token : token};
-    console.log("mockUser After Update and merge =============",JSON.stringify(User))
+    //console.log("mockUser After Update and merge =============",JSON.stringify(User))
     localStorage.removeItem("mock");
     localStorage.setItem("mock",JSON.stringify(User, null, 2))
 
@@ -64,12 +63,13 @@ describe('register', () => {
   
   it('logout user', async () => {
     let mock = getMockData();
-    console.log("mock in get =====,", mock)
+    console.log("mock in logout =====,", mock)
     let mockObj = JSON.parse(mock)
-    const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/logout').send(mockObj);
+    const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/logout').send({token : mockObj.token});
   
-    console.log(JSON.stringify(res))
+    //console.log(JSON.stringify(res))
     expect(res.statusCode).toEqual(200);
-  }),30000
+  },10000)
+  
   
 });

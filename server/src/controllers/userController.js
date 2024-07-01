@@ -104,7 +104,6 @@ const loginUser = asyncHandler(async (req, res) => {
 
 const logoutUser = asyncHandler(async (req, res) => {
 
-    const {tokenExpired} = require("../utils/tokenExpired")
     const {username, token} = req.body
     if(!username || !token){
         res.status(404);
@@ -114,24 +113,10 @@ const logoutUser = asyncHandler(async (req, res) => {
     let  {getConnection} = require("../../server");
     let database = getConnection();
     const registeredUser =  database.get("auth").find({username : username}).value();
-    // const r = allUsers.filter((user)=>{
-    //     return user.username === username
-    // })
-
+   
     if(registeredUser.length === 0){
         res.status(400)
         throw new Error('username does not exist in table');
-    }
-    if(registeredUser.token !== token){
-        res.status(400)
-        throw new Error('token is invaild');
-
-    }
-
-    if(tokenExpired(token)){
-        res.status(400)
-        throw new Error('token has expired');
-
     }
 
     const result = database.get("auth").find({username :username}).assign({token : ""}).write();
