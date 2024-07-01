@@ -63,9 +63,10 @@ describe('register', () => {
   
   it('logout user', async () => {
     let mock = getMockData();
-    console.log("mock in logout =====,", mock)
+    console.log("mock in logout =====,", mock,typeof mock)
     let mockObj = JSON.parse(mock)
-    const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/logout').send({token : mockObj.token});
+    let {token, username} = mockObj
+    const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/logout').send({token : token, username: username});
   
     //console.log(JSON.stringify(res))
     expect(res.statusCode).toEqual(200);
