@@ -3,5 +3,5 @@
   "nickname": "John Doe",
   "password": "Test12345",
   "confirm_password": "Test12345",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiSm9obkBEb2UiLCJpZCI6IjQifSwiaWF0IjoxNzE5ODE5MzA4LCJleHAiOjE3MTk4MjIzMDh9.oxavpr5Pq3pUAzf2_Dh96NwNYCv3DnkpdAKBYgnFgD0"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiSm9obkBEb2UiLCJpZCI6IjQifSwiaWF0IjoxNzIwMDMzMzg5LCJleHAiOjE3MjAwMzYzODl9.g17z8lIqcloOF2TTh12rf6S4yByrIsSjox9fSmM0kLM"
 }
