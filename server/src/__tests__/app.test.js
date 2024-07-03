@@ -211,5 +211,19 @@ it('Gets all fruits', async () => {
     expect(res.statusCode).toEqual(200);
   })
   
+  it('deactivates user account', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {password, username} = mockObj
+    let confirm_delete = true
+    const res = await request("https://fruitsrestapi.onrender.com")
+                     .delete('/api/user/deactivate')
+                     .send({username: username, password : password, confirm_delete : confirm_delete});
+  
+    //console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  })
+  
   
 });
