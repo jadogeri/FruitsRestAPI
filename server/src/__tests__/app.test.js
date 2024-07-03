@@ -136,6 +136,35 @@ it('Gets all fruits', async () => {
     expect(res.statusCode).toEqual(200);
   })
 
+  it('Gets all client fruits', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {token} = mockObj
+    const res = await request("https://fruitsrestapi.onrender.com")
+                      .get('/api/client/getfruits')
+                      .set('Authorization',`Bearer ${token}`);
+                      
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  })
+
+  it('Replaces a client fruit', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {token} = mockObj
+    const res = await request("https://fruitsrestapi.onrender.com")
+                      .put('/api/client/replacefruit')
+                      .send({old_id : 2, new_id : 50})
+                      .set('Authorization',`Bearer ${token}`);
+                      
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  })
+
   
   it('Removes a client fruit by id', async () => {
     let mock = getMockData();
