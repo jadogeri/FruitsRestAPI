@@ -6,7 +6,7 @@ const fs = require("fs");
 const {getMockData} = require("../utils/getMockData");
 const {setMockData} = require("../utils/setMockData");
 
-
+const list = [1,2,3,4,5,6,7]
 
 
 describe('register', () => {
@@ -102,6 +102,75 @@ it('Gets all fruits', async () => {
  * clients
  * 
  *  */
+  it('Adds a fruit', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {token} = mockObj
+
+    for (let index in list){
+        const res = await request("https://fruitsrestapi.onrender.com")
+                      .post('/api/client/addfruit')
+                      .set('Authorization',`Bearer ${token}`)
+                      .send({ id : list[index]});
+                      
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+
+    }
+    
+  })
+
+  it('Gets a client fruit by id', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {token} = mockObj
+    const res = await request("https://fruitsrestapi.onrender.com")
+                      .get('/api/client/getfruit/1')
+                      .set('Authorization',`Bearer ${token}`);
+                      
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  })
+
+  
+  it('Removes a client fruit by id', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {token} = mockObj
+    const res = await request("https://fruitsrestapi.onrender.com")
+                      .delete('/api/client/removefruit/1')
+                      .set('Authorization',`Bearer ${token}`);
+                      
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  })
+
+
+  it('Removes all client fruits ', async () => {
+    let mock = getMockData();
+    console.log("mock in logout =====,", mock,typeof mock)
+    let mockObj = JSON.parse(mock)
+    let {token} = mockObj
+    const res = await request("https://fruitsrestapi.onrender.com")
+                      .delete('/api/client/removefruits')
+                      .set('Authorization',`Bearer ${token}`);
+                      
+  
+    console.log(JSON.stringify(res))
+    expect(res.statusCode).toEqual(200);
+  })
+
+
+
+
+
+
   it('logout user', async () => {
     let mock = getMockData();
     console.log("mock in logout =====,", mock,typeof mock)
