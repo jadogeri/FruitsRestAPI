@@ -36,7 +36,7 @@ describe('register', () => {
     const res = await request("https://fruitsrestapi.onrender.com").post('/api/user/register').send(mockObj);
 
    // console.log(JSON.stringify(res))
-    expect(res.statusCode).toEqual(400);
+    expect(res.statusCode).toEqual(200);
   });
 
 

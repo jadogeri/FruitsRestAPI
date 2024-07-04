@@ -89,12 +89,15 @@ or
 
 ## Tests
 
-1. Change to project view structure
-2. navigate to app/src/test unitTest/java/com.example.currencyconverter
-3. right click on LogTest.java and select , 
+1. Navigate to project src folder entering command cd FruitsRestAPI/server.
 
 ```bash
-  run LogTest.java
+  cd /FruitsRestAPI/server
+```
+2. Type npm run test then press Enter. 
+
+```bash
+  npm run test
 ```
 ![tests](assets/images/tests.png)
 
