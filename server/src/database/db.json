@@ -1,6 +1,20 @@
 {
-  "auth": [],
-  "users": [],
+  "auth": [
+    {
+      "username": "z",
+      "token": "",
+      "expiresIn": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "4CmIU12L6spJJibF0D-Mm",
+      "username": "z",
+      "password": "$2b$05$ooy0bdrRuQgUb36pmgP1M.CHue1U2758m4W2YmsgWza.v8wx.gs7G",
+      "nickname": "z",
+      "fruits": []
+    }
+  ],
   "fruits": [
     {
       "id": 1,

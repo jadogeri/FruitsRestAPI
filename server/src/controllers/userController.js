@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const { nanoid } = require("nanoid");
 
 /**
  * @description Post Register 
@@ -39,7 +40,7 @@ const registerUser = asyncHandler(async (req, res) => {
     
     const hashedPassword = await bcrypt.hash(password,5);
 
-     let client =  { id: "4", username: username, password : hashedPassword ,nickname : nickname, fruits : []}
+     let client =  { id: nanoid(), username: username, password : hashedPassword ,nickname : nickname, fruits : []}
      let result =  database.get('users').push( client).write();
      database.get("auth").push({username :username,token:"",expiresIn : ""}).write()
      //database.get("users").remove().write();  database.get("auth").remove().write();
