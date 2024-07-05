@@ -137,6 +137,38 @@
  *                   type: string
  *       500:
  *         description: Some server error
+ * /api/user/deactivate:
+ *   delete:
+ *     summary: remove a user account
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [username, password, confirm_delete]
+ *             properties:
+ *               username:
+ *                  type: string
+ *               password:
+ *                  type: string
+ *               confirm_delete:
+ *                  type: boolean
+ *     responses:
+ *       200:
+ *         description: Clear token of Authenticated User.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 username:
+ *                   type: string
+ *                 token: 
+ *                   type: string
+ *       500:
+ *         description: Some server error
  */
 
 

@@ -51,8 +51,13 @@ const swaggeroptions = {
   definition:{
     openapi : "3.0.0",
     info: {
-      title: "Fruits Rest API",
-      version: "0.1"
+      title: "Fruits API",
+      version: "0.1",
+      termsOfService: "http://swagger.io/terms",
+      license:{
+        name: "Apache 2.0",
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
 
     },
     servers : [

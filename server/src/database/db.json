@@ -1,41 +1,6 @@
 {
-  "auth": [
-    {
-      "username": "z",
-      "token": "",
-      "expiresIn": ""
-    },
-    {
-      "username": "John@Doe",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiSm9obkBEb2UiLCJpZCI6IjQifSwiaWF0IjoxNzE5NzA2NjQ4LCJleHAiOjE3MTk3MDk2NDh9.YX8A7cu1ekXF_YN1YzD4W8Cg_eGTNo7f3q_86Sqpnf8",
-      "expiresIn": ""
-    }
-  ],
-  "users": [
-    {
-      "id": "4",
-      "username": "z",
-      "password": "$2b$05$hjKqsmT4NO0ONAVwpKYuteKaDQEXvNxKW6TGosJiQlWqzGsx6UdOm",
-      "nickname": "z",
-      "fruits": [
-        {
-          "id": 3,
-          "name": "asian pear"
-        },
-        {
-          "id": 11,
-          "name": "blueberry"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "username": "John@Doe",
-      "password": "$2b$05$rJmr5b74ttG2ruB9hxqO4.qm4VRkqIneAFrpufotVprLVOtSvUVha",
-      "nickname": "John Doe",
-      "fruits": []
-    }
-  ],
+  "auth": [],
+  "users": [],
   "fruits": [
     {
       "id": 1,
